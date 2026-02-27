@@ -492,3 +492,59 @@ canvas {
   padding: 1rem 1.6rem;
   cursor: pointer;
 }
+
+/* 计时器样式 */
+.timer {
+  margin: 20px auto;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  display: inline-block;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.timer.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.timer-label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.timer-display {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff69b4;
+}
+
+.timer-display span {
+  display: inline-block;
+  min-width: 35px;
+  text-align: center;
+}
+
+/* iPhone 14 计时器适配 */
+@media screen and (max-width: 410px) {
+  .timer {
+    margin: 15px auto;
+    padding: 12px;
+  }
+
+  .timer-label {
+    font-size: 0.85rem;
+  }
+
+  .timer-display {
+    font-size: 1rem;
+  }
+
+  .timer-display span {
+    min-width: 25px;
+  }
+}

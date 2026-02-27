@@ -305,6 +305,10 @@ const animationTimeline = () => {
       zIndex: "-1"
     })
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+    .to(".timer", 0.5, {
+      visibility: "visible",
+      opacity: 1
+    })
     .to(
       ".last-smile",
       0.5,
@@ -341,6 +345,35 @@ playPauseButton.addEventListener('click', () => {
     togglePlay(!isPlaying)
   }
 })
+
+// 计时器功能
+function initTimer() {
+  // 起始时间: 2026年2月23日下午1:30
+  const startTime = new Date('2026-02-23T13:30:00').getTime()
+
+  function updateTimer() {
+    const now = new Date().getTime()
+    const diff = now - startTime
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+    document.getElementById('timer-days').textContent = days
+    document.getElementById('timer-hours').textContent = hours
+    document.getElementById('timer-minutes').textContent = minutes
+    document.getElementById('timer-seconds').textContent = seconds
+  }
+
+  // 立即更新一次
+  updateTimer()
+  // 每秒更新一次
+  setInterval(updateTimer, 1000)
+}
+
+// 页面加载后启动计时器
+document.addEventListener('DOMContentLoaded', initTimer)
 
 function togglePlay(play) {
   if (!audio) return
