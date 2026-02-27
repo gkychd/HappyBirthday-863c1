@@ -6,6 +6,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 canvas {
@@ -309,6 +310,136 @@ canvas {
     font-weight: lighter;
   }
 }
+
+/* iPhone 14 适配 (390px 宽度) */
+@media screen and (max-width: 410px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100vw;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .one {
+    font-size: 2.8rem;
+  }
+
+  .two {
+    font-size: 1rem;
+  }
+
+  .three {
+    font-size: 2rem;
+  }
+
+  .four .text-box {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .four .text-box p {
+    font-size: 0.9rem;
+  }
+
+  .text-box .fake-btn {
+    right: 5px;
+    bottom: -40px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .five p {
+    font-size: 1.3rem;
+  }
+
+  .five .idea-5 {
+    font-size: 2.2rem;
+  }
+
+  .idea-6 span {
+    font-size: 6rem;
+  }
+
+  .container > div {
+    top: 12vh;
+  }
+
+  .six .hat {
+    width: 40px;
+    top: -15px;
+    left: 45%;
+  }
+
+  .six img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  .wish-hbd {
+    font-size: 1.8em;
+    padding: 0 10px;
+  }
+
+  .wish h5 {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .nine p {
+    font-size: 1.2rem;
+    padding: 0 15px;
+  }
+
+  .startSign {
+    margin: 15vh 5vw;
+  }
+
+  .startSign .two {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .startSign .button {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .play-pause {
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    top: 15px;
+  }
+
+  .baloons img {
+    width: 40px;
+    height: auto;
+  }
+
+  .eight svg {
+    width: 20px;
+  }
+
+  /* 调整第八幕圆点位置 */
+  .eight svg:nth-child(1) { top: 5vh; }
+  .eight svg:nth-child(2) { top: 18vh; }
+  .eight svg:nth-child(3) { top: 28vh; }
+  .eight svg:nth-child(4) { top: 38vh; }
+  .eight svg:nth-child(5) { top: 55vh; }
+  .eight svg:nth-child(6) { top: 35vh; }
+  .eight svg:nth-child(7) { top: 58vh; }
+  .eight svg:nth-child(8) { top: 78vh; }
+  .eight svg:nth-child(9) { top: 88vh; }
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
